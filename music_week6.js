@@ -1,25 +1,25 @@
-//paramaters
+//parameters
 let sqY = 0;
 let sqx = 0;
 let cY = 0;
 let cX = 0;
-angleMode(DEGREES);
 
 function draw_one_frame(words,vocal,drum,bass,other,counter) {
-//setup
+
+  //setup
 colorMode(HSB,100);
 background(0,0);
 
 //square setup
-sqSize = map(drum, 0, 100, 100, 0);
-let yellow = color(20,160,100);
-let red = color(0,150,60);
+let sqSize = map(drum, 0, 100, 100, 0);
+let yellow = color(20,100,100);
+let red = color(0,100,60);
 let sqAmt = map(other,0,100,0,1.1);
 let changingColor = lerpColor(red,yellow,sqAmt);
 fill(changingColor);
 
 //square stroke setup
-strokeW = map(vocal, 0, 100, 0, 20);
+let strokeW = map(vocal, 0, 100, 0, 20);
 strokeWeight(strokeW);
 let blue = color(65, 50, 100);
 let dBlue = color(65,50,20);
@@ -28,7 +28,7 @@ let strokeCol = lerpColor(dBlue,blue,stAmt);
 stroke(strokeCol);
 
 //ellipse setup
-cSize = map(bass, 0, 100, 100, 0)
+let cSize = map(bass, 0, 100, 100, 0)
 let lGreen = color(33,10,100);
 let green = color(33,100,100);
 let cAmt = map(drum,0,100,0,1);
@@ -39,16 +39,17 @@ push();
 stroke(vocal)
 strokeWeight(1)
 fill(cCol);
+
 //left row
 for(let i = 0; i <2; i++ ){
 ellipse(cX+50, cY+100 + (400 * i), cSize, 20)
-    }
-//mid row 1
+ }
+ //mid row 1
   for(let i = 0; i <2; i++ ){
 ellipse(cX+250, cY+300 + (400 * i), cSize, 20)
-    }
-//mid row 2
-    for(let i = 0; i <2; i++ ){
+ }
+ //mid row 2
+   for(let i = 0; i <2; i++ ){
 ellipse(cX+450, cY+100 + (400 * i), cSize, 20)
     }
 //right row
@@ -65,20 +66,15 @@ strokeWeight(1)
 let lX = map(vocal,0,100,0,100)
 rect(lX+100, 195, 30, 10)
 rect(-lX+170, 595, 30, 10)
-
-
 rect(lX+500, 595, 30, 10)
 rect(-lX+570, 195, 30, 10)
-
-
-
 pop()
+
 //squares
 push();
 //T_left
 for(let i = 0; i <4; i++ ){
 rect(sqx, sqY + (200 * i), sqSize)
-  
 }
 //T_mid1
 for(let i = 0; i <4; i++ ){
